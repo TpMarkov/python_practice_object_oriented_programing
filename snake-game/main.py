@@ -2,13 +2,15 @@ from turtle import Screen
 from snake import Snake
 import time
 from food import Food
+from score_board import Scoreboard
 
 DISTANCE_TO_COLLISION = 15
 segments = []
 game_is_on = True
+
 new_snake = Snake()
 new_food = Food()
-score = 0
+scoreboard = Scoreboard()
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -29,6 +31,6 @@ while game_is_on:
     new_snake.move()
 
     if new_snake.head.distance(new_food) < DISTANCE_TO_COLLISION:
-        score += 1
+        scoreboard.increase_score()
         new_food.refresh()
         new_snake.extend()
