@@ -4,24 +4,26 @@ from food import Food
 from score_board import Scoreboard
 import time
 
-DISTANCE_TO_COLLISION = 15
-
+DISTANCE_TO_COLLISION = 18
 screen = Screen()
-screen.setup(width=600, height=600)
-screen.bgcolor("black")
-screen.title("🐍 Snake Game")
+screen.setup(width=650, height=650)
+screen.title("🐍 Neon Snake Pro")
 screen.tracer(0)
 
-# Draw border
+# Background texture
+screen.bgpic("assets/bg.gif")
+
+# Border (clean neon frame)
 border = Turtle()
 border.hideturtle()
-border.color("gray")
+border.pensize(3)
+border.color("#00ffcc")
 border.penup()
-border.goto(-290, -290)
+border.goto(-300, -300)
 border.pendown()
 
 for _ in range(4):
-    border.forward(580)
+    border.forward(600)
     border.left(90)
 
 snake = Snake()
@@ -37,11 +39,8 @@ screen.onkey(snake.right, "Right")
 game_is_on = True
 
 while game_is_on:
-
     screen.update()
-
-    speed = max(0.03, 0.10 - scoreboard.score * 0.002)
-    time.sleep(speed)
+    time.sleep(0.08)
 
     snake.move()
 
@@ -52,19 +51,16 @@ while game_is_on:
         scoreboard.increase_score()
 
     # Wall collision
-    if (
-            snake.head.xcor() > 280
-            or snake.head.xcor() < -280
-            or snake.head.ycor() > 280
-            or snake.head.ycor() < -280
-    ):
+    if abs(snake.head.xcor()) > 290 or abs(snake.head.ycor()) > 290:
         scoreboard.game_over()
         game_is_on = False
 
     # Tail collision
     for segment in snake.segments[1:]:
-        if snake.head.distance(segment) < 10:
+        if snake.head.distance(segment) < 12:
             scoreboard.game_over()
             game_is_on = False
+
+
 
 screen.exitonclick()

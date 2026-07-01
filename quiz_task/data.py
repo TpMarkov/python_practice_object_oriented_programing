@@ -13,7 +13,7 @@ question_data = [{"type": "boolean", "difficulty": "easy", "category": "History"
                  {"type": "boolean", "difficulty": "easy", "category": "Entertainment: Video Games",
                   "question": "In &quot;Tony Hawk&#039;s Underground&quot;, the main character&#039;s friend turned rival is named &quot;Jeff Sampson&quot;",
                   "correct_answer": "False", "incorrect_answers": ["True"]},
-                 {"type": "boolean", "difficulty": "easy", "category": "Entertainment: Video Games",
+                 {"type": "boolean", "difficulty": "easy", "category": "Entertainment Video Games",
                   "question": "The 2005 video game &quot;Call of Duty 2: Big Red One&quot; is not available on PC.",
                   "correct_answer": "True", "incorrect_answers": ["False"]},
                  {"type": "boolean", "difficulty": "easy", "category": "Science &amp; Nature",
