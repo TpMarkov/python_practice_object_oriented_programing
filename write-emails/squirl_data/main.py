@@ -11,7 +11,7 @@ black_squirrels = len(data[data["Primary Fur Color"] == "Black"])
 # Create the structure for the new CSV file and assign the values
 new_data_format = {
     "Squirrel Colors"
-    "Squirrels Count": [grey_squirrels, red_squirrels, black_squirrels]
+    "Squirrels Count": [grey_squirrels, red_squirrels, black_squirrels]\
 }
 
 # Create the actual DataFrame from the created structure for the data
