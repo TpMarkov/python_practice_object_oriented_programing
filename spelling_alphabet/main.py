@@ -4,7 +4,6 @@ import pandas
 def spell_word(word):
     return [nato_words[letter] for letter in word.upper()]
 
-
 data = pandas.read_csv("nato_phonetic_alphabet.csv")
 
 nato_words = {
