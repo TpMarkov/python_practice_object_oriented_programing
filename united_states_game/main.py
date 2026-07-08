@@ -1,5 +1,4 @@
 import turtle
-
 import pandas
 
 # Screen Setup
@@ -28,17 +27,16 @@ while game_is_on or correct_answers < 50:
     ).title()
 
     if user_answer == "Exit":
-        missing_states = []
+        missing_states = [s for s in states_names if s not in correct_states]
 
-        for state in states_names:
-            if state not in correct_states:
-                missing_states.append(state)
-
-        missing_states = {
-            "Missing States": missing_states
+        missing_states_data_format = {
+            "Missing States": missing_states,
         }
-        missing_states = pandas.DataFrame(missing_states)
-        missing_states.to_csv("./missing_states/missing_states.csv")
+
+        missing_states_data = pandas.DataFrame(missing_states_data_format)
+        missing_states_data.to_csv("./missing_states/missing_states.csv")
+
+        print(f"HERE IS WHAT YOU'VE MISSED:\n{missing_states}")
         break
 
     if correct_answers == 50:
