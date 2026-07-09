@@ -8,7 +8,7 @@ def convert_values():
     kilometers = miles * 1.60934
 
     kilometers_input.delete(0, END)
-    kilometers_input.insert(0, kilometers)
+    kilometers_input.insert(0, str(kilometers))
 
 
 window = Tk()
@@ -20,7 +20,6 @@ window.title("Kilometer Converter")
 
 
 input_area = Entry(width=20)
-miles = 0
 input_area.grid(column=1, row=0)
 miles_label = Label(text="Miles")
 miles_label.grid(column=2, row=0)
