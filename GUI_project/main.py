@@ -1,31 +1,40 @@
 import tkinter
+from gc import disable
 from tkinter import *
 
 
-def click_me():
-    if len(input_area.get()) > 0:
-        my_label.config(text=input_area.get())
-    else:
-        my_label.config(text="Please type some text in the input area!")
-    input_area.delete(0, END)
+def convert_values():
+    miles = float(input_area.get())
+    kilometers = miles * 1.60934
+
+    kilometers_input.delete(0, END)
+    kilometers_input.insert(0, kilometers)
 
 
 window = Tk()
 window.minsize(400, 300)
-window.title("First GUI Program")
-# Label
-my_label = Label(text="Hello World",
-                 font=("Arial", 25, "bold"))
-my_label.config(text="This is my first GUI program")
-my_label.pack()
+window.title("Kilometer Converter")
 
 # Start button
-start_button = Button(text="Start", command=click_me)
 # ⬇ Every time when we create new element - we need to run pack on it !!!
-start_button.pack()
 
-input_area = Entry(width=40)
 
-input_area.pack()
+input_area = Entry(width=20)
+miles = 0
+input_area.grid(column=1, row=0)
+miles_label = Label(text="Miles")
+miles_label.grid(column=2, row=0)
+kilometers_label = Label(text="Is equal to:")
+kilometers_label.grid(column=0, row=1)
+kilometers_input = Entry(width=20)
+kilometers_input.grid(column=1, row=1)
+kilometers_label = Label(text="Kilometers")
+kilometers_label.grid(column=3, row=1)
+convert_button = Button(
+    window,
+    text="Convert",
+    command=convert_values
+)
+convert_button.grid(column=2, row=2)
 
 window.mainloop()
