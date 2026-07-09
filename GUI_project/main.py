@@ -18,7 +18,6 @@ window.title("Kilometer Converter")
 # Start button
 # ⬇ Every time when we create new element - we need to run pack on it !!!
 
-
 input_area = Entry(width=20)
 input_area.grid(column=1, row=0)
 miles_label = Label(text="Miles")
@@ -37,3 +36,7 @@ convert_button = Button(
 convert_button.grid(column=2, row=2)
 
 window.mainloop()
+
+arr_of_numbers = [1, 5, 67, 7, 4, 3]
+arr_of_numbers.sort(reverse=True)
+print(arr_of_numbers)
