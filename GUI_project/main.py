@@ -11,7 +11,7 @@ ctk.set_default_color_theme("green")
 # Theme Colors
 # ==================================================
 
-BG_COLOR = "#09090B"
+BG_COLOR = "#202020"
 CARD_COLOR = "#111827"
 INNER_CARD = "#1F2937"
 BORDER_COLOR = "#374151"
